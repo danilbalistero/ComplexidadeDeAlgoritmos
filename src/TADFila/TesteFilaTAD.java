@@ -32,9 +32,6 @@ public class TesteFilaTAD {
 
         System.out.println("A fila está vazia? " + fila.estaVazia());
 
-
-
-
     }
 }
 
