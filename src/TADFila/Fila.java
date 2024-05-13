@@ -1,5 +1,7 @@
 package TADFila;
 
+import java.util.Stack;
+
 public class Fila<T> {
     private Node<T> inicio;
     private Node<T> fim;
@@ -14,6 +16,11 @@ public class Fila<T> {
             this.next = null;
         }
     }
+
+    public int tamanho() {
+        return tamanho;
+    }
+
     public Fila() {
         inicio = null;
         fim = null;
@@ -51,10 +58,25 @@ public class Fila<T> {
         return (inicio == null);
     }
 
-    public int tamanho() {
-        return tamanho;
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        Node<T> atual = inicio;
+        while (atual != null) {
+            builder.append(atual.data).append(" ");
+            atual = atual.next;
+        }
+        return builder.toString();
     }
 
+    public void inverterFila() {
+        if (estaVazia()) {
+            return;
+        }
+        T elemento = desenfileirar();
+        inverterFila();
+        enfileirar(elemento);
+    }
 
 }
 
