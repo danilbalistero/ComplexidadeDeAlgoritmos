@@ -78,6 +78,20 @@ public class Fila<T> {
         enfileirar(elemento);
     }
 
+    public static boolean verificarPalindromo(String palavra) {
+        palavra = palavra.toLowerCase().replaceAll("[^a-z]", "");
+
+        Fila<Character> fila = new Fila<>();
+        StringBuilder inverso = new StringBuilder();
+
+        for (char c : palavra.toCharArray()) {
+            fila.enfileirar(c);
+        }
+        while (!fila.estaVazia()) {
+            inverso.append(fila.desenfileirar());
+        }
+        return palavra.equals(inverso.reverse().toString());
+    }
 }
 
 

@@ -1,6 +1,8 @@
 package TADFila;
 
 
+import static TADFila.Fila.verificarPalindromo;
+
 public class TesteFilaTAD {
     public static void main(String[] args) {
 
@@ -32,7 +34,17 @@ public class TesteFilaTAD {
 
         System.out.println("A fila está vazia? " + fila.estaVazia());
 
+        String palavra1 = "radar";
+        String palavra2 = "reconhecer";
+        String palavra3 = "casa";
+
+        System.out.println(palavra1 + " é um palíndromo? " + verificarPalindromo(palavra1));
+        System.out.println(palavra2 + " é um palíndromo? " + verificarPalindromo(palavra2));
+        System.out.println(palavra3 + " é um palíndromo? " + verificarPalindromo(palavra3));
+
     }
-}
+
+    }
+
 
 
