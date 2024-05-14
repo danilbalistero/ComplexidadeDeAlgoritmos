@@ -1,6 +1,8 @@
 package TADFila;
 
 
+import java.util.List;
+
 import static TADFila.Fila.verificarPalindromo;
 
 public class TesteFilaTAD {
@@ -20,15 +22,14 @@ public class TesteFilaTAD {
 
         System.out.println("Tamanho da fila: " + fila.tamanho());
 
-        //desinfileirando
+        // Desenfileirando
         System.out.println("Elemento desenfileirado: " + fila.desenfileirar());
         System.out.println("Elemento desenfileirado: " + fila.desenfileirar());
 
-        //invertendo a ordem da fila
+        // Invertendo a ordem da fila
         System.out.println("Fila original: " + fila);
         fila.inverterFila();
         System.out.println("Fila invertida: " + fila);
-
 
         System.out.println("Tamanho da fila: " + fila.tamanho());
 
@@ -42,9 +43,13 @@ public class TesteFilaTAD {
         System.out.println(palavra2 + " é um palíndromo? " + verificarPalindromo(palavra2));
         System.out.println(palavra3 + " é um palíndromo? " + verificarPalindromo(palavra3));
 
-    }
+        System.out.println("Fila original: " + fila.toString());
 
+        fila.ordenarFila();
+
+        System.out.println("Fila ordenada: " + fila.toString());
     }
+}
 
 
 

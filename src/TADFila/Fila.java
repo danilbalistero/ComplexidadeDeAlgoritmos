@@ -1,11 +1,16 @@
 package TADFila;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Stack;
 
-public class Fila<T> {
+public class Fila<T extends Comparable<T>> {
     private Node<T> inicio;
     private Node<T> fim;
     private int tamanho;
+
+
 
     private static class Node<T> {
         private T data;
@@ -91,6 +96,20 @@ public class Fila<T> {
             inverso.append(fila.desenfileirar());
         }
         return palavra.equals(inverso.reverse().toString());
+    }
+
+    public void ordenarFila() {
+        if (estaVazia()) {
+            return;
+        }
+        List<T> elementos = new ArrayList<>();
+        while (!estaVazia()) {
+            elementos.add(desenfileirar());
+        }
+        Collections.sort(elementos);
+        for (T elemento : elementos) {
+            enfileirar(elemento);
+        }
     }
 }
 
